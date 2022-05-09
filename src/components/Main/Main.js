@@ -1,53 +1,53 @@
-import './Main.css'
+import "./Main.css";
 
-import { useEffect, useState } from 'react';
-import useInterval from 'use-interval';
-import { createTheWorld, startSimulation } from '../../utils/utils'
-import ControlPanel from './ControlPanel/ControlPannel';
-import GamePanel from './GamePanel/GamePanel';
-import { INTERVAL_TIMEOUT } from '../../utils/constants';
+import { useEffect, useState } from "react";
+import useInterval from "use-interval";
+import { createTheWorld, startSimulation } from "../../utils/utils";
+import ControlPanel from "./ControlPanel/ControlPannel";
+import GamePanel from "./GamePanel/GamePanel";
+import { INTERVAL_TIMEOUT } from "../../utils/constants";
 
-function Main () {
-
-  const [grid, setGrid] = useState([])
-  const [started, setStarted] = useState(false)
+function Main() {
+  const [grid, setGrid] = useState([]);
+  const [started, setStarted] = useState(false);
 
   function clickClearWorld() {
-    setGrid([])
+    setGrid([]);
   }
 
   function clickCreateTheWorld() {
-    clickClearWorld()
-    setGrid(createTheWorld())
-    setStarted(false)
+    clickClearWorld();
+    setGrid(createTheWorld());
+    setStarted(false);
   }
 
   function clickStartSimulation() {
-    setStarted(!started)
+    setStarted(!started);
   }
 
   useEffect(() => {
-    setGrid(createTheWorld())
-  },[])
+    setGrid(createTheWorld());
+  }, []);
 
-  useInterval(() => {
-    setGrid(startSimulation(grid))
-  }, started ? INTERVAL_TIMEOUT : null)
-  
+  useInterval(
+    () => {
+      setGrid(startSimulation(grid));
+    },
+    started ? INTERVAL_TIMEOUT : null
+  );
+
   return (
-    <main className='main'>
-      <ControlPanel 
+    <main className="main">
+      <ControlPanel
         clickCreate={clickCreateTheWorld}
         clickClear={clickClearWorld}
         clickStart={clickStartSimulation}
         started={started}
         grid={grid}
       />
-      <GamePanel 
-        grid={grid}
-      />
+      <GamePanel grid={grid} />
     </main>
-  )
+  );
 }
 
 export default Main;

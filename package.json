@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "eslint": "node_modules/.bin/eslint src/"
   },
   "eslintConfig": {
     "extends": [
@@ -27,8 +28,9 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "eslint --fix",
+    "*.{.js, jsx}": [
+      "node_modules/.bin/eslint --max-warnings=0",
+      "prettier --write",
       "git add"
     ]
   },

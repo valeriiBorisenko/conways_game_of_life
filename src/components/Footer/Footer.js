@@ -1,9 +1,9 @@
 function Footer() {
-  return(
+  return (
     <footer className="footer">
-      <p className='footer__author'>&copy; Valerii Borisenko</p>
+      <p className="footer__author">&copy; Valerii Borisenko</p>
     </footer>
-  )
+  );
 }
 
 export default Footer;
