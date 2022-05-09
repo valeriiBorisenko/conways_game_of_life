@@ -2,12 +2,13 @@ import GameComponent from "./GameComponent/GameComponent";
 import "./GamePanel.css";
 
 function GamePanel(props) {
+  const { grid } = props;
   return (
     <ul className="game-panel">
-      {props?.grid &&
-        props?.grid.map((rows, l) =>
+      {grid &&
+        grid.map((rows, l) =>
           rows.map((columns, k) => (
-            <GameComponent status={columns} id={`${l}-${k}`} />
+            <GameComponent status={columns} key={`${l}-${k}`} />
           ))
         )}
     </ul>

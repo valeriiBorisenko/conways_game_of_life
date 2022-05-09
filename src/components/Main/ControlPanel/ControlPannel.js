@@ -1,3 +1,4 @@
+import { BUTTONS } from "../../../utils/constants";
 import Button from "./Button/Button";
 
 function ControlPannel(props) {
@@ -5,14 +6,14 @@ function ControlPannel(props) {
 
   return (
     <div className="control-pannel">
-      <Button name={"Create"} onClick={clickCreate} disabled={false} />
+      <Button name={BUTTONS.CREATE} onClick={clickCreate} disabled={false} />
       <Button
-        name={!started ? "Start" : "Stop"}
+        name={!started ? BUTTONS.START : BUTTONS.STOP}
         onClick={clickStart}
         disabled={grid.length === 0}
       />
       <Button
-        name={"Clear"}
+        name={BUTTONS.CLEAR}
         onClick={clickClear}
         disabled={grid.length === 0}
       />

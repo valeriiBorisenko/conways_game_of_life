@@ -24,3 +24,9 @@ export const NEIGHBORS_THREE = 3;
 export const CELL_DEAD = 0;
 export const CELL_ALIVE = 1;
 export const INTERVAL_TIMEOUT = 500;
+export const BUTTONS = {
+  CREATE: "Create",
+  CLEAR: "Clear",
+  START: "Start",
+  STOP: "Stop",
+};

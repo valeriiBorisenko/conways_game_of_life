@@ -11,19 +11,19 @@ function Main() {
   const [grid, setGrid] = useState([]);
   const [started, setStarted] = useState(false);
 
-  function clickClearWorld() {
+  const clickClearWorld = () => {
     setGrid([]);
-  }
+  };
 
-  function clickCreateTheWorld() {
+  const clickCreateTheWorld = () => {
     clickClearWorld();
     setGrid(createTheWorld());
     setStarted(false);
-  }
+  };
 
-  function clickStartSimulation() {
+  const clickStartSimulation = () => {
     setStarted(!started);
-  }
+  };
 
   useEffect(() => {
     setGrid(createTheWorld());

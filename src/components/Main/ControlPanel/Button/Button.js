@@ -1,15 +1,16 @@
 import "./Button.css";
 
 function Button(props) {
+  const { name, onClick, disabled } = props;
   return (
     <button
       className="button"
       type="button"
-      name={props.name}
-      onClick={props.onClick}
-      disabled={props.disabled}
+      name={name}
+      onClick={onClick}
+      disabled={disabled}
     >
-      {props.name}{" "}
+      {name}{" "}
     </button>
   );
 }

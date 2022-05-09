@@ -1,12 +1,11 @@
 import "./GameComponent.css";
 
 function GameComponent(props) {
+  const { status, id } = props;
   return (
     <li
-      className={`game-component${
-        props.status === 1 ? " game-component_alive" : ""
-      }`}
-      key={props.id}
+      className={`game-component${status === 1 ? " game-component_alive" : ""}`}
+      key={id}
     />
   );
 }
