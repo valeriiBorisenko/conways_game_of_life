@@ -1,0 +1,11 @@
+.game-component {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #8a8a8a;
+  list-style: none;
+  background-color: black;
+}
+
+.game-component_alive {
+  background-color: purple;
+}
