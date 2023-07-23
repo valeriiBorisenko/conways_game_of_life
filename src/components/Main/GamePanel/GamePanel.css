@@ -1,0 +1,8 @@
+.game-panel {
+  display: grid;
+  grid-template-columns: repeat(var(--rows-count), 20px);
+  grid-template-rows: repeat(var(--columns-count), 20px);
+  margin-top: 50px;
+  border: 1px solid #8a8a8a;
+  padding: 0;
+}
